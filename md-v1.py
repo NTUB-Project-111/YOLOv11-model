@@ -1,13 +1,19 @@
+from openai import api_key
 from roboflow import Roboflow
 import cv2
+from dotenv import load_dotenv
 
-rf = Roboflow(api_key="B0Imj5OwU9lbQC4ApdmC")  
-project = rf.workspace().project("wound-ebsdw")  
-model = project.version(3).model  # 取得模型
+# 載入 .env 檔案
+load_dotenv()
+
+# 使用 API 金鑰
+rf = Roboflow(api_key=api_key)
+project = rf.workspace().project("wound-ebsdw")
+model = project.version(3).model
 
 # 設定圖片路徑
 image_path = "test-imgs/burn.jpeg"
-output_path = "prediction/prediction-img.jpg"
+output_path = "prediction/prediction-img2.jpg"
 
 # 讀取原始圖片
 image = cv2.imread(image_path)
