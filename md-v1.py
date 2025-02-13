@@ -2,6 +2,8 @@ from openai import api_key
 from roboflow import Roboflow
 import cv2
 from dotenv import load_dotenv
+123
+
 
 # 載入 .env 檔案
 load_dotenv()
